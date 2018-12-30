@@ -1,0 +1,25 @@
+.root{
+    -fx-background-color: white;
+}
+.labelBar{
+    border-style: groove;
+    -fx-border-color: black;
+    -fx-alignment: BASELINE_CENTER;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+.labelList{
+    border-style: groove;
+    -fx-border-color: black;
+    -fx-alignment: BASELINE_CENTER;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+.labelBan{
+    border-style: groove;
+    -fx-border-color: black;
+    -fx-alignment: BASELINE_CENTER;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+}
+

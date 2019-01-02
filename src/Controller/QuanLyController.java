@@ -7,15 +7,23 @@ package Controller;
 
 import Model.QuanLyModel;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -41,7 +49,8 @@ public class QuanLyController implements Initializable {
     @FXML
     private TableColumn<QuanLyModel, Float> pricecol;
 
-   
+    @FXML
+    private StackPane ItemsStack;
 
     /**
      * Initializes the controller class.

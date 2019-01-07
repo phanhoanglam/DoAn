@@ -7,23 +7,17 @@ package Controller;
 
 import Model.QuanLyModel;
 import java.awt.event.ActionEvent;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -50,7 +44,52 @@ public class QuanLyController implements Initializable {
     private TableColumn<QuanLyModel, Float> pricecol;
 
     @FXML
+    private Label labelItems;
+
+    @FXML
+    private Label labelSales;
+
+    @FXML
+    private Label labelUsers;
+
+    @FXML
+    private Label labelLogout;
+
+    @FXML
+    private StackPane SalesStack;
+
+    @FXML
     private StackPane ItemsStack;
+
+    @FXML
+    private StackPane UsersStack;
+
+    void click_Sales() {
+        labelSales.setDisable(true);
+        labelItems.setDisable(false);
+        labelUsers.setDisable(false);
+        SalesStack.setVisible(true);
+        ItemsStack.setVisible(false);
+        UsersStack.setVisible(false);
+    }
+
+    void click_Items() {
+        labelSales.setDisable(false);
+        labelItems.setDisable(true);
+        labelUsers.setDisable(false);
+        SalesStack.setVisible(false);
+        ItemsStack.setVisible(true);
+        UsersStack.setVisible(false);
+    }
+
+    void click_Users() {
+        labelSales.setDisable(false);
+        labelItems.setDisable(false);
+        labelUsers.setDisable(true);
+        SalesStack.setVisible(false);
+        ItemsStack.setVisible(false);
+        UsersStack.setVisible(true);
+    }
 
     /**
      * Initializes the controller class.
@@ -71,6 +110,15 @@ public class QuanLyController implements Initializable {
         listProduct.add(model);
         tableItems.setItems(listProduct);
 
+        labelSales.setOnMouseClicked((event) -> {
+            click_Sales();
+        });
+        labelItems.setOnMouseClicked((event) -> {
+            click_Items();
+        });
+        labelUsers.setOnMouseClicked((event) -> {
+            click_Users();
+        });
     }
 
 }

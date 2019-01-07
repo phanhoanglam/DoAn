@@ -11,9 +11,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="710.0" prefWidth="1384.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.QuanLyController">
+<AnchorPane id="AnchorPane" prefHeight="758.0" prefWidth="1335.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.QuanLyController">
    <children>
-      <Label layoutX="1237.0" layoutY="19.0" prefHeight="26.0" prefWidth="84.0" styleClass="labelBar" text="Logout">
+      <Label fx:id="labelLogout" layoutX="1237.0" layoutY="19.0" prefHeight="26.0" prefWidth="84.0" styleClass="labelBar" text="Logout">
          <graphic>
             <ImageView fitHeight="19.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -22,12 +22,12 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label layoutX="38.0" layoutY="23.0" prefHeight="17.0" prefWidth="237.0" styleClass="labelBar" text="Sales" textAlignment="CENTER" />
-      <Label layoutX="275.0" layoutY="23.0" prefHeight="17.0" prefWidth="244.0" styleClass="labelBar" text="Items" />
-      <Label layoutX="519.0" layoutY="23.0" prefHeight="17.0" prefWidth="254.0" styleClass="labelBar" text="Users" />
-      <StackPane layoutX="-2.0" layoutY="93.0" prefHeight="617.0" prefWidth="1335.0">
+      <Label fx:id="labelSales" disable="true" layoutX="38.0" layoutY="23.0" prefHeight="17.0" prefWidth="237.0" styleClass="labelBar" text="Sales" textAlignment="CENTER" />
+      <Label fx:id="labelItems" layoutX="275.0" layoutY="23.0" prefHeight="17.0" prefWidth="244.0" styleClass="labelBar" text="Items" />
+      <Label fx:id="labelUsers" layoutX="519.0" layoutY="23.0" prefHeight="17.0" prefWidth="254.0" styleClass="labelBar" text="Users" />
+      <StackPane fx:id="SalesStack" layoutY="66.0" prefHeight="692.0" prefWidth="1335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0">
          <children>
-            <TabPane blendMode="RED" depthTest="DISABLE" prefHeight="688.0" prefWidth="771.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
+            <TabPane blendMode="RED" depthTest="DISABLE" prefHeight="612.0" prefWidth="1335.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="          List table          ">
                      <content>
@@ -54,9 +54,9 @@
                                     <TableView prefHeight="201.0" prefWidth="384.0" GridPane.rowIndex="1">
                                       <columns>
                                         <TableColumn minWidth="40.0" prefWidth="75.0" text="No." />
-                                        <TableColumn minWidth="140.0" prefWidth="155.0" text="Item name" />
-                                          <TableColumn minWidth="100.0" prefWidth="111.0" text="Price" />
-                                          <TableColumn minWidth="93.0" prefWidth="93.0" text="Quantity" />
+                                        <TableColumn minWidth="140.0" prefWidth="75.0" text="Item name" />
+                                          <TableColumn minWidth="100.0" prefWidth="75.0" text="Price" />
+                                          <TableColumn minWidth="100.0" prefWidth="75.0" text="Quantity" />
                                       </columns>
                                     </TableView>
                                     <Pane prefHeight="200.0" prefWidth="200.0">
@@ -66,18 +66,18 @@
                                           <Label layoutX="4.0" layoutY="78.0" prefHeight="17.0" prefWidth="49.0" text="In time : " />
                                           <Label layoutX="3.0" layoutY="111.0" text="Out time : " />
                                           <Button layoutX="351.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Start" />
-                                          <Button layoutY="147.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Reserve" />
-                                          <Button layoutX="115.0" layoutY="147.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Transfer" />
-                                          <Button layoutX="233.0" layoutY="147.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Gather" />
-                                          <Button layoutX="351.0" layoutY="147.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Sepetate" />
-                                          <Button layoutX="351.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Cancel" />
-                                          <Button layoutX="351.0" layoutY="107.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Finish" />
+                                          <Button layoutX="3.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Reserve" />
+                                          <Button layoutX="117.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Transfer" />
+                                          <Button layoutX="235.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Gather" />
+                                          <Button layoutX="351.0" layoutY="166.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Sepetate" />
+                                          <Button layoutX="351.0" layoutY="66.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Cancel" />
+                                          <Button layoutX="351.0" layoutY="116.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Finish" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                        <children>
                                           <Label layoutX="5.0" layoutY="6.0" text="Item name : " />
-                                          <Label layoutX="253.0" layoutY="6.0" text="Quantity : " />
+                                          <Label layoutX="269.0" layoutY="6.0" text="Quantity : " />
                                           <TextField layoutX="338.0" layoutY="2.0" prefHeight="25.0" prefWidth="97.0" />
                                           <Button layoutX="1.0" layoutY="30.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Add" />
                                           <Button layoutX="121.0" layoutY="30.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Subtract" />
@@ -98,12 +98,12 @@
                               </GridPane>
                               <Pane prefHeight="603.0" prefWidth="378.0" GridPane.columnIndex="2">
                                  <children>
-                                    <TableView fx:id="tableItems" layoutX="2.0" layoutY="197.0" prefHeight="403.0" prefWidth="430.0">
+                                    <TableView fx:id="tableItems" layoutX="11.0" layoutY="203.0" prefHeight="403.0" prefWidth="410.0">
                                       <columns>
                                         <TableColumn fx:id="idcol" prefWidth="75.0" text="No." />
-                                        <TableColumn fx:id="namecol" minWidth="135.0" prefWidth="145.0" text="Item name" />
-                                          <TableColumn fx:id="pricecol" minWidth="84.0" prefWidth="118.0" text="Price" />
-                                          <TableColumn fx:id="quantitycol" minWidth="68.0" prefWidth="91.0" text="Quantity" />
+                                        <TableColumn fx:id="namecol" minWidth="135.0" prefWidth="75.0" text="Item name" />
+                                          <TableColumn fx:id="pricecol" minWidth="100.0" prefWidth="75.0" text="Price" />
+                                          <TableColumn fx:id="quantitycol" minWidth="100.0" prefWidth="75.0" text="Quantity" />
                                       </columns>
                                     </TableView>
                                     <Label layoutX="2.0" layoutY="14.0" text="Quantity : " />
@@ -120,7 +120,7 @@
                                        <content>
                                           <FlowPane prefHeight="600.0" prefWidth="413.0">
                                              <children>
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-background-color: red;" text="Bàn 1" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 1" />
                                                 <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 2" />
                                                 <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 3" />
                                                 <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 3" />
@@ -162,72 +162,74 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Label layoutX="83.0" layoutY="43.0" text="From : " />
-                              <DatePicker layoutX="130.0" layoutY="39.0" prefHeight="25.0" prefWidth="186.0" />
-                              <Label layoutX="347.0" layoutY="43.0" text="To : " />
-                              <DatePicker layoutX="383.0" layoutY="39.0" prefHeight="25.0" prefWidth="188.0" />
-                              <TableView layoutX="83.0" layoutY="125.0" prefHeight="301.0" prefWidth="313.0">
+                              <Label layoutX="44.0" layoutY="39.0" prefHeight="17.0" prefWidth="41.0" text="From :" />
+                              <Label layoutX="292.0" layoutY="39.0" prefHeight="17.0" prefWidth="30.0" text="To : " />
+                              <DatePicker layoutX="91.0" layoutY="35.0" />
+                              <DatePicker layoutX="322.0" layoutY="35.0" />
+                              <Button layoutX="551.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="Statistic" />
+                              <Button layoutX="1232.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="CSV output" />
+                              <TableView layoutX="91.0" layoutY="108.0" prefHeight="361.0" prefWidth="323.0">
                                 <columns>
-                                  <TableColumn prefWidth="123.0" text="User" />
-                                  <TableColumn prefWidth="188.0" text="Quantity of bill" />
+                                  <TableColumn prefWidth="107.0" text="User" />
+                                  <TableColumn prefWidth="215.0" text="Quantity of bill" />
                                 </columns>
                               </TableView>
-                              <TableView layoutX="483.0" layoutY="125.0" prefHeight="458.0" prefWidth="370.0">
+                              <TableView layoutX="450.0" layoutY="108.0" prefHeight="540.0" prefWidth="408.0">
                                 <columns>
-                                  <TableColumn prefWidth="134.0" text="Table" />
-                                  <TableColumn prefWidth="235.0" text="Passengers" />
+                                  <TableColumn prefWidth="131.0" text="Table" />
+                                  <TableColumn minWidth="0.0" prefWidth="275.0" text="Passengers" />
                                 </columns>
                               </TableView>
-                              <TableView layoutX="934.0" layoutY="125.0" prefHeight="458.0" prefWidth="379.0">
+                              <TableView layoutX="893.0" layoutY="108.0" prefHeight="541.0" prefWidth="436.0">
                                 <columns>
-                                  <TableColumn prefWidth="154.0" text="Category" />
-                                  <TableColumn prefWidth="139.0" text="Item" />
-                                    <TableColumn minWidth="0.0" prefWidth="84.0" text="Quantity" />
+                                  <TableColumn prefWidth="176.0" text="Category" />
+                                  <TableColumn minWidth="0.0" prefWidth="163.0" text="Item" />
+                                    <TableColumn minWidth="0.0" prefWidth="95.0" text="Quantity" />
                                 </columns>
                               </TableView>
-                              <Button layoutX="616.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Statistic" />
-                              <Button layoutX="1216.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="CSV output" />
-                           </children></AnchorPane>
+                           </children>
+                        </AnchorPane>
                   </content>
                 </Tab>
                   <Tab text="          In &amp; Out          ">
                      <content>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TextField layoutX="133.0" layoutY="31.0" />
-                              <TextField layoutX="133.0" layoutY="81.0" />
-                              <TextField layoutX="133.0" layoutY="133.0" />
-                              <Label layoutX="14.0" layoutY="35.0" text="Outcome reason : " />
-                              <Label layoutX="13.0" layoutY="85.0" prefHeight="17.0" prefWidth="108.0" text="Outcome amount : " />
-                              <Label layoutX="13.0" layoutY="137.0" prefHeight="17.0" prefWidth="62.0" text="User : " />
-                              <Button layoutX="208.0" layoutY="182.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Add" />
-                              <TableView layoutX="316.0" layoutY="31.0" prefHeight="267.0" prefWidth="398.0">
+                              <Label layoutY="32.0" prefHeight="17.0" prefWidth="123.0" text="Outcome reason : " />
+                              <Label layoutY="66.0" prefHeight="17.0" prefWidth="108.0" text="Outcome amount : " />
+                              <Label layoutY="107.0" prefHeight="17.0" prefWidth="75.0" text="User : " />
+                              <TextField layoutX="118.0" layoutY="28.0" prefHeight="25.0" prefWidth="177.0" />
+                              <TextField layoutX="117.0" layoutY="62.0" prefHeight="25.0" prefWidth="179.0" />
+                              <TextField layoutX="117.0" layoutY="103.0" prefHeight="25.0" prefWidth="179.0" />
+                              <Button layoutX="198.0" layoutY="168.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Add" />
+                              <TableView layoutX="303.0" layoutY="30.0" prefHeight="200.0" prefWidth="470.0">
                                 <columns>
-                                  <TableColumn prefWidth="92.0" text="Date" />
-                                  <TableColumn prefWidth="140.0" text="Outcome reason" />
-                                    <TableColumn prefWidth="85.0" text="Amount" />
-                                    <TableColumn text="User" />
+                                  <TableColumn prefWidth="125.0" text="Date" />
+                                  <TableColumn prefWidth="149.0" text="Outcome reason" />
+                                    <TableColumn prefWidth="104.0" text="Amount" />
+                                    <TableColumn prefWidth="91.0" text="User" />
                                 </columns>
                               </TableView>
-                              <Button layoutX="515.0" layoutY="327.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Button" />
-                              <Button layoutX="622.0" layoutY="327.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Button" />
-                              <TableView layoutX="748.0" layoutY="116.0" prefHeight="465.0" prefWidth="571.0">
+                              <TableView layoutX="789.0" layoutY="115.0" prefHeight="531.0" prefWidth="537.0">
                                 <columns>
-                                  <TableColumn prefWidth="116.0" text="Date" />
-                                  <TableColumn prefWidth="153.0" text="Total income" />
-                                    <TableColumn minWidth="0.0" prefWidth="156.0" text="Total outcome" />
-                                    <TableColumn minWidth="0.0" prefWidth="145.0" text="Left amount" />
+                                  <TableColumn prefWidth="124.0" text="Date" />
+                                  <TableColumn prefWidth="148.0" text="Total income" />
+                                    <TableColumn prefWidth="150.0" text="Total outcome" />
+                                    <TableColumn prefWidth="114.0" text="Left amount" />
                                 </columns>
                               </TableView>
-                              <Label layoutX="748.0" layoutY="36.0" text="From : " />
-                              <Label layoutX="1000.0" layoutY="35.0" text="To :" />
-                              <DatePicker layoutX="803.0" layoutY="31.0" />
-                              <DatePicker layoutX="1034.0" layoutY="31.0" />
-                              <Button layoutX="1077.0" layoutY="69.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Statistic" />
-                              <Button layoutX="1216.0" layoutY="69.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="103.0" text="CSV output" />
+                              <Label layoutX="789.0" layoutY="32.0" prefHeight="17.0" prefWidth="50.0" text="From : " />
+                              <Label layoutX="1050.0" layoutY="32.0" text="To : " />
+                              <DatePicker layoutX="839.0" layoutY="28.0" />
+                              <DatePicker layoutX="1088.0" layoutY="28.0" />
+                              <Button layoutX="1102.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Statistic" />
+                              <Button layoutX="1227.0" layoutY="74.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="CSV output" />
+                              <Button layoutX="538.0" layoutY="272.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Edit" />
+                              <Button layoutX="668.0" layoutY="272.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Delete" />
                            </children>
                         </AnchorPane>
-                     </content></Tab>
+                     </content>
+                  </Tab>
               </tabs>
                <opaqueInsets>
                   <Insets />
@@ -235,26 +237,58 @@
             </TabPane>
          </children>
       </StackPane>
-      <StackPane fx:id="ItemsStack" layoutY="93.0" prefHeight="617.0" prefWidth="1384.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="93.0">
+      <StackPane fx:id="ItemsStack" layoutY="66.0" prefHeight="692.0" prefWidth="1335.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0">
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="214.0" layoutY="79.0" text="Date : " />
-                  <Label layoutX="214.0" layoutY="123.0" text="Item name : " />
-                  <Label layoutX="214.0" layoutY="165.0" text="Category : " />
-                  <DatePicker layoutX="294.0" layoutY="75.0" prefHeight="25.0" prefWidth="144.0" />
-                  <TextField layoutX="294.0" layoutY="119.0" prefHeight="25.0" prefWidth="144.0" />
-                  <ComboBox layoutX="294.0" layoutY="161.0" prefHeight="25.0" prefWidth="205.0" />
-                  <Label layoutX="454.0" layoutY="123.0" text="Amount : " />
-                  <TextField layoutX="514.0" layoutY="119.0" prefHeight="25.0" prefWidth="84.0" />
-                  <Button layoutX="216.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Add" />
-                  <Button layoutX="331.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Search" />
-                  <Button layoutX="442.0" layoutY="223.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Search All" />
-                  <TableView layoutX="576.0" layoutY="44.0" prefHeight="568.0" prefWidth="570.0">
+                  <Label layoutX="43.0" layoutY="39.0" prefHeight="17.0" prefWidth="76.0" text="Date : " />
+                  <Label layoutX="43.0" layoutY="81.0" prefHeight="17.0" prefWidth="76.0" text="Item name : " />
+                  <Label layoutX="43.0" layoutY="121.0" prefHeight="17.0" prefWidth="76.0" text="Category : " />
+                  <DatePicker layoutX="119.0" layoutY="35.0" />
+                  <Label layoutX="305.0" layoutY="81.0" text="Amount : " />
+                  <TextField layoutX="119.0" layoutY="77.0" prefHeight="25.0" prefWidth="174.0" />
+                  <TextField layoutX="366.0" layoutY="77.0" prefHeight="25.0" prefWidth="124.0" />
+                  <ComboBox layoutX="119.0" layoutY="117.0" prefHeight="25.0" prefWidth="174.0" />
+                  <Button layoutX="43.0" layoutY="185.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Add" />
+                  <Button layoutX="275.0" layoutY="185.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Search All" />
+                  <Button layoutX="158.0" layoutY="185.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Search" />
+                  <TableView layoutX="522.0" layoutY="38.0" prefHeight="613.0" prefWidth="657.0">
                     <columns>
-                      <TableColumn prefWidth="169.0" text="Category" />
-                      <TableColumn prefWidth="189.0" text="Item name" />
-                        <TableColumn prefWidth="213.0" text="Left quantity" />
+                      <TableColumn prefWidth="187.0" text="Category" />
+                      <TableColumn prefWidth="281.0" text="Item name" />
+                        <TableColumn prefWidth="188.0" text="Left quantity" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <StackPane fx:id="UsersStack" layoutX="6.0" layoutY="66.0" prefHeight="692.0" prefWidth="1335.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TextField layoutX="162.0" layoutY="35.0" prefHeight="25.0" prefWidth="193.0" />
+                  <TextField layoutX="162.0" layoutY="79.0" prefHeight="25.0" prefWidth="193.0" />
+                  <TextField layoutX="162.0" layoutY="124.0" prefHeight="25.0" prefWidth="193.0" />
+                  <ComboBox layoutX="162.0" layoutY="171.0" prefHeight="25.0" prefWidth="193.0" />
+                  <DatePicker layoutX="162.0" layoutY="217.0" prefHeight="25.0" prefWidth="193.0" />
+                  <Label layoutX="68.0" layoutY="39.0" prefHeight="17.0" prefWidth="76.0" text="Username : " />
+                  <Label layoutX="68.0" layoutY="83.0" prefHeight="17.0" prefWidth="76.0" text="Address : " />
+                  <Label layoutX="68.0" layoutY="128.0" prefHeight="17.0" prefWidth="76.0" text="Age : " />
+                  <Label layoutX="68.0" layoutY="175.0" prefHeight="17.0" prefWidth="76.0" text="Gender : " />
+                  <Label layoutX="68.0" layoutY="221.0" prefHeight="17.0" prefWidth="76.0" text="Date start : " />
+                  <Button layoutX="68.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Add" />
+                  <Button layoutX="170.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Edit" />
+                  <Button layoutX="272.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Delete" />
+                  <TableView layoutX="414.0" layoutY="37.0" prefHeight="625.0" prefWidth="899.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="No" />
+                      <TableColumn prefWidth="171.0" text="Username" />
+                        <TableColumn prefWidth="166.0" text="Address" />
+                        <TableColumn prefWidth="78.0" text="Age" />
+                        <TableColumn prefWidth="88.0" text="Gender" />
+                        <TableColumn prefWidth="149.0" text="Position" />
+                        <TableColumn prefWidth="171.0" text="Date start" />
                     </columns>
                   </TableView>
                </children>

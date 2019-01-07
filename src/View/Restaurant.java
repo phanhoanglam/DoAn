@@ -25,6 +25,7 @@ public class Restaurant extends Application {
         scene.getStylesheets().add(getClass().getResource("/Css/QuanLy.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
+        primaryStage.setFullScreen(true);
     }
 
     /**

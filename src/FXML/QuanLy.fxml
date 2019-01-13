@@ -26,6 +26,7 @@
       <Label fx:id="labelSales" disable="true" layoutX="38.0" layoutY="23.0" prefHeight="17.0" prefWidth="237.0" styleClass="labelBar" text="Sales" textAlignment="CENTER" />
       <Label fx:id="labelItems" layoutX="275.0" layoutY="23.0" prefHeight="17.0" prefWidth="244.0" styleClass="labelBar" text="Items" />
       <Label fx:id="labelUsers" layoutX="519.0" layoutY="23.0" prefHeight="17.0" prefWidth="254.0" styleClass="labelBar" text="Users" />
+      <Label fx:id="lblDate" layoutX="915.0" layoutY="23.0" prefHeight="17.0" prefWidth="174.0" styleClass="labelBar" textFill="#1e1e1e" />
       <StackPane fx:id="SalesStack" layoutY="66.0" prefHeight="692.0" prefWidth="1335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0">
          <children>
             <TabPane blendMode="RED" depthTest="DISABLE" prefHeight="612.0" prefWidth="1335.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
@@ -62,29 +63,33 @@
                                     </TableView>
                                     <Pane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label layoutX="-2.0" layoutY="11.0" text="User : " textFill="#bf1919">
+                                          <Label layoutX="-2.0" layoutY="11.0" prefHeight="25.0" prefWidth="76.0" text="User : " textFill="#bf1919">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <Label layoutX="-2.0" layoutY="48.0" text="Table no : ">
+                                          <Label layoutX="-2.0" layoutY="48.0" prefHeight="25.0" prefWidth="76.0" text="Table no : ">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <Label layoutY="85.0" prefHeight="25.0" prefWidth="70.0" text="In time : ">
+                                          <Label layoutX="-2.0" layoutY="85.0" prefHeight="25.0" prefWidth="76.0" text="In time : ">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <Label layoutX="-3.0" layoutY="118.0" text="Out time : ">
+                                          <Label layoutX="-2.0" layoutY="118.0" prefHeight="25.0" prefWidth="76.0" text="Out time : ">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Label>
-                                          <Button layoutX="358.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Start" />
+                                          <Button fx:id="btnSalesStart" layoutX="358.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Start" />
                                           <Button layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Reserve" />
                                           <Button layoutX="119.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Transfer" />
                                           <Button layoutX="237.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Gather" />
                                           <Button layoutX="358.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Sepetate" />
                                           <Button layoutX="358.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Cancel" />
-                                          <Button layoutX="358.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Finish" />
+                                          <Button fx:id="btnSalesFinish" layoutX="358.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Finish" />
+                                          <Label layoutX="94.0" layoutY="52.0" prefHeight="17.0" prefWidth="206.0" styleClass="labelBar" />
+                                          <Label fx:id="lblSalesOuttime" layoutX="93.0" layoutY="122.0" prefHeight="17.0" prefWidth="208.0" styleClass="labelBar" />
+                                          <Label fx:id="lblSalesIntime" layoutX="94.0" layoutY="89.0" prefHeight="17.0" prefWidth="206.0" styleClass="labelBar" />
+                                          <Label layoutX="94.0" layoutY="15.0" prefHeight="17.0" prefWidth="207.0" styleClass="labelBar" text="Lâm IT" />
                                        </children>
                                        <opaqueInsets>
                                           <Insets />
@@ -320,7 +325,9 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <Label fx:id="lblTime" layoutX="784.0" layoutY="23.0" prefHeight="17.0" prefWidth="392.0" />
+      <Label fx:id="lblTime" layoutX="915.0" layoutY="45.0" prefHeight="17.0" prefWidth="174.0" styleClass="labelBar" textFill="#141313" />
+      <Label layoutX="853.0" layoutY="23.0" prefHeight="17.0" prefWidth="52.0" styleClass="labelBar" text="Date : " />
+      <Label layoutX="853.0" layoutY="45.0" prefHeight="17.0" prefWidth="52.0" styleClass="labelBar" text="Time : " />
    </children>
    <padding>
       <Insets top="10.0" />

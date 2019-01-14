@@ -115,11 +115,11 @@ public class QuanLyController implements Initializable {
     
     void click_btnStartIntime() {
         lblSalesOuttime.setText(null);
-        lblSalesIntime.setText(lblTime.getText());
+        lblSalesIntime.setText(lblDate.getText() + " " + lblTime.getText());
     }
     
     void click_btnFinishOuttime() {
-        lblSalesOuttime.setText(lblTime.getText());
+        lblSalesOuttime.setText(lblDate.getText() + " " + lblTime.getText());
     }
 
     Task<Time> taskDate = new Task<Time>() {
@@ -145,7 +145,7 @@ public class QuanLyController implements Initializable {
         protected Time call() throws Exception {
             while (true) {
                 Date d = new Date();
-                SimpleDateFormat h = new SimpleDateFormat("HH-mm-ss");
+                SimpleDateFormat h = new SimpleDateFormat("HH:mm:ss");
                 updateMessage(h.format(d));
                 Thread.sleep(1000);
             }

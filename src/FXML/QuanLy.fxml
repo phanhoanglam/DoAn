@@ -63,22 +63,10 @@
                                     </TableView>
                                     <Pane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label layoutX="-2.0" layoutY="11.0" prefHeight="25.0" prefWidth="76.0" text="User : " textFill="#bf1919">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font></Label>
-                                          <Label layoutX="-2.0" layoutY="48.0" prefHeight="25.0" prefWidth="76.0" text="Table no : ">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font></Label>
-                                          <Label layoutX="-2.0" layoutY="85.0" prefHeight="25.0" prefWidth="76.0" text="In time : ">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font></Label>
-                                          <Label layoutX="-2.0" layoutY="118.0" prefHeight="25.0" prefWidth="76.0" text="Out time : ">
-                                             <font>
-                                                <Font size="16.0" />
-                                             </font></Label>
+                                          <Label layoutX="-2.0" layoutY="11.0" prefHeight="25.0" prefWidth="76.0" text="User : " textFill="#bf1919" />
+                                          <Label layoutX="-2.0" layoutY="48.0" prefHeight="25.0" prefWidth="76.0" text="Table no : " />
+                                          <Label layoutX="-2.0" layoutY="85.0" prefHeight="25.0" prefWidth="76.0" text="In time : " />
+                                          <Label layoutX="-2.0" layoutY="118.0" prefHeight="25.0" prefWidth="76.0" text="Out time : " />
                                           <Button fx:id="btnSalesStart" layoutX="358.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Start" />
                                           <Button layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Reserve" />
                                           <Button layoutX="119.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Transfer" />
@@ -86,10 +74,10 @@
                                           <Button layoutX="358.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Sepetate" />
                                           <Button layoutX="358.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Cancel" />
                                           <Button fx:id="btnSalesFinish" layoutX="358.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Finish" />
-                                          <Label layoutX="94.0" layoutY="52.0" prefHeight="17.0" prefWidth="206.0" styleClass="labelBar" />
-                                          <Label fx:id="lblSalesOuttime" layoutX="93.0" layoutY="122.0" prefHeight="17.0" prefWidth="208.0" styleClass="labelBar" />
-                                          <Label fx:id="lblSalesIntime" layoutX="94.0" layoutY="89.0" prefHeight="17.0" prefWidth="206.0" styleClass="labelBar" />
-                                          <Label layoutX="94.0" layoutY="15.0" prefHeight="17.0" prefWidth="207.0" styleClass="labelBar" text="Lâm IT" />
+                                          <Label layoutX="94.0" layoutY="52.0" prefHeight="17.0" prefWidth="206.0" styleClass="labelSalesItem" />
+                                          <Label fx:id="lblSalesOuttime" layoutX="93.0" layoutY="122.0" prefHeight="17.0" prefWidth="208.0" styleClass="labelSalesItem" />
+                                          <Label fx:id="lblSalesIntime" layoutX="94.0" layoutY="89.0" prefHeight="17.0" prefWidth="206.0" styleClass="labelSalesItem" />
+                                          <Label layoutX="94.0" layoutY="15.0" prefHeight="17.0" prefWidth="207.0" styleClass="labelSalesItem" text="Lâm IT" />
                                        </children>
                                        <opaqueInsets>
                                           <Insets />
@@ -119,29 +107,23 @@
                               </GridPane>
                               <Pane prefHeight="603.0" prefWidth="378.0" GridPane.columnIndex="2">
                                  <children>
-                                    <TableView fx:id="tableItems" layoutX="2.0" layoutY="218.0" prefHeight="403.0" prefWidth="410.0">
+                                    <TableView fx:id="tableItems" layoutY="112.0" prefHeight="488.0" prefWidth="439.0">
                                       <columns>
                                         <TableColumn fx:id="idcol" prefWidth="75.0" text="No." />
-                                        <TableColumn fx:id="namecol" minWidth="135.0" prefWidth="75.0" text="Item name" />
-                                          <TableColumn fx:id="pricecol" minWidth="100.0" prefWidth="75.0" text="Price" />
-                                          <TableColumn fx:id="quantitycol" minWidth="100.0" prefWidth="75.0" text="Quantity" />
+                                        <TableColumn fx:id="namecol" minWidth="135.0" prefWidth="152.0" text="Item name" />
+                                          <TableColumn fx:id="pricecol" minWidth="100.0" prefWidth="110.0" text="Price" />
+                                          <TableColumn fx:id="quantitycol" minWidth="100.0" prefWidth="101.0" text="Quantity" />
                                       </columns>
                                     </TableView>
-                                    <Label layoutX="2.0" layoutY="14.0" text="Quantity : ">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Label>
-                                    <TextField layoutX="79.0" layoutY="14.0" />
-                                    <Button layoutX="260.0" layoutY="14.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Add" />
-                                    <Label layoutX="-4.0" layoutY="51.0" prefHeight="37.0" prefWidth="440.0" text="----------------------- MENU -----------------------" textAlignment="CENTER" wrapText="true">
+                                    <Label layoutX="163.0" layoutY="622.0" text="Quantity : " />
+                                    <TextField layoutX="252.0" layoutY="618.0" prefHeight="25.0" prefWidth="76.0" />
+                                    <Button layoutX="362.0" layoutY="618.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Add" />
+                                    <Label layoutX="-4.0" prefHeight="37.0" prefWidth="440.0" text="----------------------- MENU -----------------------" textAlignment="CENTER" wrapText="true">
                                        <font>
                                           <Font size="20.0" />
                                        </font></Label>
-                                    <Label layoutY="103.0" text="Category : ">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Label>
-                                    <ComboBox layoutX="78.0" layoutY="103.0" prefWidth="150.0" />
+                                    <Label layoutY="55.0" text="Category : " />
+                                    <ComboBox layoutX="66.0" layoutY="51.0" prefWidth="150.0" />
                                  </children>
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0">
@@ -150,34 +132,34 @@
                                        <content>
                                           <FlowPane prefHeight="600.0" prefWidth="413.0">
                                              <children>
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 1" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 2" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 3" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 3" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 4" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 5" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 6" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 7" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 8" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 9" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 10" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 11" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 12" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 13" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 14" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 15" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 16" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 17" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 18" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 19" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 20" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 21" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 22" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 23" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 24" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 25" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 26" />
-                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Bàn 27" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 1" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 2" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 3" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 4" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 5" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 6" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 7" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 8" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 9" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 10" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 11" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 12" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 13" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 14" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 15" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 16" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 17" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 18" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 19" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 20" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 21" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 22" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 23" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 24" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 25" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 26" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 27" />
+                                                <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="137.0" style="-fx-margins: 100px;" text="Table 28" />
                                              </children>
                                           </FlowPane>
                                        </content>

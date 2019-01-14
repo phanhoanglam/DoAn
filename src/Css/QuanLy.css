@@ -8,6 +8,10 @@
     -fx-border-radius: 10px;
     -fx-font-weight: bold;
 }
+.labelSalesItem{
+    -fx-alignment: BASELINE_CENTER;
+    -fx-font-weight: bold;
+}
 .labelList{
     border-style: groove;
     -fx-border-color: black;

@@ -24,8 +24,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 
@@ -85,6 +87,16 @@ public class QuanLyController implements Initializable {
     private Label lblSalesOuttime;
     @FXML
     private Button btnSalesFinish;
+    @FXML
+    private RadioButton rdMaleUser;
+    @FXML
+    private RadioButton rdFamaleUser;
+    @FXML
+    private RadioButton rdAdminUser;
+    @FXML
+    private RadioButton rdEmployeeUser;
+    
+    private ToggleGroup toggle;
 
     void click_Sales() {
         labelSales.setDisable(true);
@@ -112,12 +124,12 @@ public class QuanLyController implements Initializable {
         ItemsStack.setVisible(false);
         UsersStack.setVisible(true);
     }
-    
+
     void click_btnStartIntime() {
         lblSalesOuttime.setText(null);
         lblSalesIntime.setText(lblDate.getText() + " " + lblTime.getText());
     }
-    
+
     void click_btnFinishOuttime() {
         lblSalesOuttime.setText(lblDate.getText() + " " + lblTime.getText());
     }
@@ -157,16 +169,21 @@ public class QuanLyController implements Initializable {
         }
     };
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        lblDate.textProperty().bind(taskDate.messageProperty());
-        lblTime.textProperty().bind(taskTime.messageProperty());
-        new Thread(taskDate).start();
-        new Thread(taskTime).start();
+    public void group_RadioGenderUsers() {
+        toggle = new ToggleGroup();
+        rdMaleUser.setToggleGroup(toggle);
+        rdFamaleUser.setToggleGroup(toggle);
+        rdMaleUser.setSelected(true);
+    }
+    
+    public void group_RadioRoleUsers() {
+        toggle = new ToggleGroup();
+        rdAdminUser.setToggleGroup(toggle);
+        rdEmployeeUser.setToggleGroup(toggle);
+        rdAdminUser.setSelected(true);
+    }
 
+    public void addData_TableMenuUser() {
         idcol.setCellValueFactory(new PropertyValueFactory<>("id"));
         namecol.setCellValueFactory(new PropertyValueFactory<>("name"));
         pricecol.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -180,6 +197,17 @@ public class QuanLyController implements Initializable {
 //
         listProduct.add(model);
         tableItems.setItems(listProduct);
+    }
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        lblDate.textProperty().bind(taskDate.messageProperty());
+        lblTime.textProperty().bind(taskTime.messageProperty());
+        new Thread(taskDate).start();
+        new Thread(taskTime).start();
 
         labelSales.setOnMouseClicked((event) -> {
             click_Sales();
@@ -190,13 +218,17 @@ public class QuanLyController implements Initializable {
         labelUsers.setOnMouseClicked((event) -> {
             click_Users();
         });
-        
+
         btnSalesStart.setOnMouseClicked((event) -> {
             click_btnStartIntime();
         });
         btnSalesFinish.setOnMouseClicked((event) -> {
             click_btnFinishOuttime();
         });
+
+        addData_TableMenuUser();
+        group_RadioGenderUsers();
+        group_RadioRoleUsers();
     }
 
 }

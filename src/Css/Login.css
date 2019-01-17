@@ -1,7 +1,4 @@
-.root{
-    -fx-background-color: white;    
-}
-
-.Lable {
+.textfield {
     -fx-font-size: 14px;
+    -fx-text-fill: #fff;
 }

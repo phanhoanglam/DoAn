@@ -12,9 +12,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="758.0" prefWidth="1335.0" snapToPixel="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.QuanLyController">
+<AnchorPane prefHeight="758.0" prefWidth="1352.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.QuanLyController">
    <children>
-      <Label fx:id="labelLogout" layoutX="1237.0" layoutY="19.0" prefHeight="26.0" prefWidth="84.0" styleClass="labelBar" text="Logout">
+      <Label layoutX="853.0" layoutY="23.0" prefHeight="17.0" prefWidth="52.0" styleClass="labelBar" text="Date : " />
+      <Label fx:id="lblTime" layoutX="915.0" layoutY="45.0" prefHeight="17.0" prefWidth="174.0" styleClass="labelBar" textFill="#141313" />
+      <Label fx:id="labelLogout" layoutX="1254.0" layoutY="19.0" prefHeight="26.0" prefWidth="84.0" styleClass="labelBar" text="Logout">
          <graphic>
             <ImageView fitHeight="19.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -27,6 +29,7 @@
       <Label fx:id="labelItems" layoutX="275.0" layoutY="23.0" prefHeight="17.0" prefWidth="244.0" styleClass="labelBar" text="Items" />
       <Label fx:id="labelUsers" layoutX="519.0" layoutY="23.0" prefHeight="17.0" prefWidth="254.0" styleClass="labelBar" text="Users" />
       <Label fx:id="lblDate" layoutX="915.0" layoutY="23.0" prefHeight="17.0" prefWidth="174.0" styleClass="labelBar" textFill="#1e1e1e" />
+      <Label layoutX="853.0" layoutY="45.0" prefHeight="17.0" prefWidth="52.0" styleClass="labelBar" text="Time : " />
       <StackPane fx:id="SalesStack" layoutY="66.0" prefHeight="692.0" prefWidth="1335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0">
          <children>
             <TabPane blendMode="RED" depthTest="DISABLE" prefHeight="612.0" prefWidth="1335.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
@@ -77,7 +80,7 @@
                                           <Label layoutX="94.0" layoutY="52.0" prefHeight="17.0" prefWidth="206.0" styleClass="labelSalesItem" />
                                           <Label fx:id="lblSalesOuttime" layoutX="93.0" layoutY="122.0" prefHeight="17.0" prefWidth="208.0" styleClass="labelSalesItem" />
                                           <Label fx:id="lblSalesIntime" layoutX="94.0" layoutY="89.0" prefHeight="17.0" prefWidth="206.0" styleClass="labelSalesItem" />
-                                          <Label layoutX="94.0" layoutY="15.0" prefHeight="17.0" prefWidth="207.0" styleClass="labelSalesItem" text="Lâm IT" />
+                                          <Label layoutX="94.0" layoutY="15.0" prefHeight="17.0" prefWidth="207.0" styleClass="labelSalesItem" text="Lâm " />
                                        </children>
                                        <opaqueInsets>
                                           <Insets />
@@ -121,7 +124,8 @@
                                     <Label layoutX="-4.0" prefHeight="37.0" prefWidth="440.0" text="----------------------- MENU -----------------------" textAlignment="CENTER" wrapText="true">
                                        <font>
                                           <Font size="20.0" />
-                                       </font></Label>
+                                       </font>
+                                    </Label>
                                     <Label layoutY="55.0" text="Category : " />
                                     <ComboBox layoutX="66.0" layoutY="51.0" prefWidth="150.0" />
                                  </children>
@@ -282,13 +286,11 @@
                   <TextField layoutX="162.0" layoutY="35.0" prefHeight="25.0" prefWidth="193.0" />
                   <TextField layoutX="162.0" layoutY="79.0" prefHeight="25.0" prefWidth="193.0" />
                   <TextField layoutX="162.0" layoutY="124.0" prefHeight="25.0" prefWidth="193.0" />
-                  <ComboBox layoutX="162.0" layoutY="171.0" prefHeight="25.0" prefWidth="193.0" />
-                  <DatePicker layoutX="162.0" layoutY="217.0" prefHeight="25.0" prefWidth="193.0" />
                   <Label layoutX="68.0" layoutY="39.0" prefHeight="17.0" prefWidth="76.0" text="Username : " />
                   <Label layoutX="68.0" layoutY="83.0" prefHeight="17.0" prefWidth="76.0" text="Address : " />
                   <Label layoutX="68.0" layoutY="128.0" prefHeight="17.0" prefWidth="76.0" text="Age : " />
                   <Label layoutX="68.0" layoutY="175.0" prefHeight="17.0" prefWidth="76.0" text="Gender : " />
-                  <Label layoutX="68.0" layoutY="221.0" prefHeight="17.0" prefWidth="76.0" text="Date start : " />
+                  <Label layoutX="68.0" layoutY="221.0" prefHeight="17.0" prefWidth="76.0" text="Role : " />
                   <Button layoutX="68.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Add" />
                   <Button layoutX="170.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Edit" />
                   <Button layoutX="272.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Delete" />
@@ -303,13 +305,14 @@
                         <TableColumn prefWidth="171.0" text="Date start" />
                     </columns>
                   </TableView>
+                  <RadioButton fx:id="rdMaleUser" layoutX="162.0" layoutY="175.0" mnemonicParsing="false" text="Male" />
+                  <RadioButton fx:id="rdFamaleUser" layoutX="271.0" layoutY="175.0" mnemonicParsing="false" text="Famele" />
+                  <RadioButton fx:id="rdAdminUser" layoutX="162.0" layoutY="221.0" mnemonicParsing="false" text="Admin" />
+                  <RadioButton fx:id="rdEmployeeUser" layoutX="271.0" layoutY="221.0" mnemonicParsing="false" text="Employee" />
                </children>
             </AnchorPane>
          </children>
       </StackPane>
-      <Label fx:id="lblTime" layoutX="915.0" layoutY="45.0" prefHeight="17.0" prefWidth="174.0" styleClass="labelBar" textFill="#141313" />
-      <Label layoutX="853.0" layoutY="23.0" prefHeight="17.0" prefWidth="52.0" styleClass="labelBar" text="Date : " />
-      <Label layoutX="853.0" layoutY="45.0" prefHeight="17.0" prefWidth="52.0" styleClass="labelBar" text="Time : " />
    </children>
    <padding>
       <Insets top="10.0" />

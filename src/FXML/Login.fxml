@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.media.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -8,18 +12,61 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="307.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
    <children>
-      <ImageView fitHeight="259.0" fitWidth="610.0" layoutX="4.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/background1.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="202.0" layoutY="110.0" styleClass="Lable" text="Username : " />
-      <Label layoutX="202.0" layoutY="144.0" styleClass="Lable" text="Password :" />
-      <TextField layoutX="281.0" layoutY="107.0" />
-      <TextField layoutX="281.0" layoutY="141.0" />
-      <Button layoutX="281.0" layoutY="186.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Login" />
-      <Button layoutX="378.0" layoutY="186.0" mnemonicParsing="false" text="Cancel" />
+      <MediaView fx:id="mediaView" fitHeight="530.0" fitWidth="850.0" />
+      <Pane layoutX="475.0" layoutY="29.0" prefHeight="413.0" prefWidth="311.0" style="-fx-background-color: #ffffff68; -fx-background-radius: 70px;">
+         <effect>
+            <DropShadow color="#575757" />
+         </effect>
+         <children>
+            <Label layoutX="126.0" layoutY="35.0" prefHeight="17.0" prefWidth="73.0" text="Login" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="96.0" layoutY="77.0" text="Complete all reqisites" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtUser" focusColor="#405aab" labelFloat="true" layoutX="72.0" layoutY="129.0" prefHeight="36.0" prefWidth="181.0" promptText="Username" style="-fx-text-fill: #fff;" unFocusColor="WHITE">
+               <padding>
+                  <Insets top="13.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtPass" focusColor="#405aab" labelFloat="true" layoutX="72.0" layoutY="207.0" prefHeight="36.0" prefWidth="181.0" promptText="Password" style="-fx-text-fill: #fff;" unFocusColor="WHITE">
+               <padding>
+                  <Insets top="13.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton buttonType="RAISED" layoutX="93.0" layoutY="277.0" onAction="#clickSubmitLogin" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #ff6666; -fx-background-radius: 50px;" text="Sign In" textFill="#fffefe">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="93.0" layoutY="325.0" onAction="#clickCancelLogin" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #ff6666; -fx-background-radius: 50px;" text="Cancel" textFill="#f8f8f8">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Label layoutX="59.0" layoutY="29.0" prefHeight="68.0" prefWidth="283.0" text="Welcome to . . ." textFill="WHITE">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="62.0" prefHeight="70.0" prefWidth="295.0" text="Restaurant" textFill="WHITE">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

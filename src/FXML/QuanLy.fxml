@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.chart.*?>
@@ -12,11 +13,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="758.0" prefWidth="1352.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.QuanLyController">
+<AnchorPane prefHeight="758.0" prefWidth="1365.0" style="-fx-background-color: #E8F4FD;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.QuanLyController">
    <children>
       <Label layoutX="853.0" layoutY="23.0" prefHeight="17.0" prefWidth="52.0" styleClass="labelBar" text="Date : " />
       <Label fx:id="lblTime" layoutX="915.0" layoutY="45.0" prefHeight="17.0" prefWidth="174.0" styleClass="labelBar" textFill="#141313" />
-      <Label fx:id="labelLogout" layoutX="1254.0" layoutY="19.0" prefHeight="26.0" prefWidth="84.0" styleClass="labelBar" text="Logout">
+      <Label fx:id="labelLogout" layoutX="1254.0" layoutY="19.0" onMouseClicked="#click_Logout" prefHeight="26.0" prefWidth="84.0" styleClass="labelBar" text="Logout">
          <graphic>
             <ImageView fitHeight="19.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -32,13 +33,13 @@
       <Label layoutX="853.0" layoutY="45.0" prefHeight="17.0" prefWidth="52.0" styleClass="labelBar" text="Time : " />
       <StackPane fx:id="SalesStack" layoutY="66.0" prefHeight="692.0" prefWidth="1335.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0">
          <children>
-            <TabPane blendMode="RED" depthTest="DISABLE" prefHeight="612.0" prefWidth="1335.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
+            <TabPane blendMode="RED" depthTest="DISABLE" prefHeight="612.0" prefWidth="1335.0" style="-: #E8F4FD;" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                 <Tab text="          List table          ">
                      <content>
                         <GridPane hgap="15.0">
                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="90.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                           </columnConstraints>
@@ -61,8 +62,11 @@
                                         <TableColumn minWidth="40.0" prefWidth="75.0" text="No." />
                                         <TableColumn minWidth="140.0" prefWidth="154.0" text="Item name" />
                                           <TableColumn minWidth="86.0" prefWidth="124.0" text="Price" />
-                                          <TableColumn minWidth="81.0" prefWidth="81.0" text="Quantity" />
+                                          <TableColumn minWidth="81.0" prefWidth="94.0" text="Quantity" />
                                       </columns>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
                                     </TableView>
                                     <Pane prefHeight="200.0" prefWidth="200.0">
                                        <children>
@@ -70,13 +74,13 @@
                                           <Label layoutX="-2.0" layoutY="48.0" prefHeight="25.0" prefWidth="76.0" text="Table no : " />
                                           <Label layoutX="-2.0" layoutY="85.0" prefHeight="25.0" prefWidth="76.0" text="In time : " />
                                           <Label layoutX="-2.0" layoutY="118.0" prefHeight="25.0" prefWidth="76.0" text="Out time : " />
-                                          <Button fx:id="btnSalesStart" layoutX="358.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Start" />
+                                          <Button fx:id="btnSalesStart" layoutX="364.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Start" />
                                           <Button layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Reserve" />
-                                          <Button layoutX="119.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Transfer" />
-                                          <Button layoutX="237.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Gather" />
-                                          <Button layoutX="358.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Sepetate" />
-                                          <Button layoutX="358.0" layoutY="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Cancel" />
-                                          <Button fx:id="btnSalesFinish" layoutX="358.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Finish" />
+                                          <Button layoutX="125.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Transfer" />
+                                          <Button layoutX="243.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Gather" />
+                                          <Button layoutX="364.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Sepetate" />
+                                          <Button layoutX="364.0" layoutY="61.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Cancel" />
+                                          <Button fx:id="btnSalesFinish" layoutX="364.0" layoutY="106.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Finish" />
                                           <Label layoutX="94.0" layoutY="52.0" prefHeight="17.0" prefWidth="206.0" styleClass="labelSalesItem" />
                                           <Label fx:id="lblSalesOuttime" layoutX="93.0" layoutY="122.0" prefHeight="17.0" prefWidth="208.0" styleClass="labelSalesItem" />
                                           <Label fx:id="lblSalesIntime" layoutX="94.0" layoutY="89.0" prefHeight="17.0" prefWidth="206.0" styleClass="labelSalesItem" />
@@ -90,7 +94,7 @@
                                        <children>
                                           <Label layoutX="5.0" layoutY="15.0" text="Item name : " />
                                           <Label layoutX="269.0" layoutY="15.0" text="Quantity : " />
-                                          <TextField layoutX="338.0" layoutY="11.0" prefHeight="25.0" prefWidth="103.0" />
+                                          <TextField layoutX="345.0" layoutY="11.0" prefHeight="25.0" prefWidth="103.0" />
                                           <Button layoutX="1.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Add" />
                                           <Button layoutX="121.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Subtract" />
                                           <Button layoutX="238.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" text="Delete" />
@@ -117,6 +121,9 @@
                                           <TableColumn fx:id="pricecol" minWidth="100.0" prefWidth="110.0" text="Price" />
                                           <TableColumn fx:id="quantitycol" minWidth="100.0" prefWidth="101.0" text="Quantity" />
                                       </columns>
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
                                     </TableView>
                                     <Label layoutX="163.0" layoutY="622.0" text="Quantity : " />
                                     <TextField layoutX="252.0" layoutY="618.0" prefHeight="25.0" prefWidth="76.0" />
@@ -127,7 +134,7 @@
                                        </font>
                                     </Label>
                                     <Label layoutY="55.0" text="Category : " />
-                                    <ComboBox layoutX="66.0" layoutY="51.0" prefWidth="150.0" />
+                                    <JFXComboBox fx:id="cbb_Category" focusColor="#4d4d4d" layoutX="73.0" layoutY="51.0" onAction="#click_ComboboxCategory" prefHeight="25.0" prefWidth="154.0" promptText="Category" />
                                  </children>
                               </Pane>
                               <Pane prefHeight="200.0" prefWidth="200.0">
@@ -169,6 +176,9 @@
                                        </content>
                                     </ScrollPane>
                                  </children>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </Pane>
                            </children>
                         </GridPane>
@@ -189,12 +199,18 @@
                                   <TableColumn prefWidth="107.0" text="User" />
                                   <TableColumn prefWidth="215.0" text="Quantity of bill" />
                                 </columns>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </TableView>
                               <TableView layoutX="382.0" layoutY="109.0" prefHeight="540.0" prefWidth="408.0">
                                 <columns>
                                   <TableColumn prefWidth="131.0" text="Table" />
                                   <TableColumn minWidth="0.0" prefWidth="275.0" text="Passengers" />
                                 </columns>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </TableView>
                               <TableView layoutX="838.0" layoutY="109.0" prefHeight="541.0" prefWidth="470.0">
                                 <columns>
@@ -202,6 +218,9 @@
                                   <TableColumn minWidth="0.0" prefWidth="163.0" text="Item" />
                                     <TableColumn minWidth="0.0" prefWidth="139.0" text="Quantity" />
                                 </columns>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </TableView>
                            </children>
                         </AnchorPane>
@@ -225,6 +244,9 @@
                                     <TableColumn prefWidth="130.0" text="Amount" />
                                     <TableColumn prefWidth="154.0" text="User" />
                                 </columns>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </TableView>
                               <TableView layoutX="722.0" layoutY="115.0" prefHeight="531.0" prefWidth="537.0">
                                 <columns>
@@ -233,6 +255,9 @@
                                     <TableColumn prefWidth="150.0" text="Total outcome" />
                                     <TableColumn prefWidth="114.0" text="Left amount" />
                                 </columns>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
                               </TableView>
                               <Label layoutX="722.0" layoutY="32.0" prefHeight="17.0" prefWidth="50.0" text="From : " />
                               <Label layoutX="1012.0" layoutY="32.0" text="To : " />
@@ -274,6 +299,9 @@
                       <TableColumn prefWidth="281.0" text="Item name" />
                         <TableColumn prefWidth="188.0" text="Left quantity" />
                     </columns>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </TableView>
                </children>
             </AnchorPane>
@@ -283,9 +311,6 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TextField layoutX="162.0" layoutY="35.0" prefHeight="25.0" prefWidth="193.0" />
-                  <TextField layoutX="162.0" layoutY="79.0" prefHeight="25.0" prefWidth="193.0" />
-                  <TextField layoutX="162.0" layoutY="124.0" prefHeight="25.0" prefWidth="193.0" />
                   <Label layoutX="68.0" layoutY="39.0" prefHeight="17.0" prefWidth="76.0" text="Username : " />
                   <Label layoutX="68.0" layoutY="83.0" prefHeight="17.0" prefWidth="76.0" text="Address : " />
                   <Label layoutX="68.0" layoutY="128.0" prefHeight="17.0" prefWidth="76.0" text="Age : " />
@@ -304,11 +329,17 @@
                         <TableColumn prefWidth="149.0" text="Position" />
                         <TableColumn prefWidth="171.0" text="Date start" />
                     </columns>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </TableView>
-                  <RadioButton fx:id="rdMaleUser" layoutX="162.0" layoutY="175.0" mnemonicParsing="false" text="Male" />
-                  <RadioButton fx:id="rdFamaleUser" layoutX="271.0" layoutY="175.0" mnemonicParsing="false" text="Famele" />
-                  <RadioButton fx:id="rdAdminUser" layoutX="162.0" layoutY="221.0" mnemonicParsing="false" text="Admin" />
-                  <RadioButton fx:id="rdEmployeeUser" layoutX="271.0" layoutY="221.0" mnemonicParsing="false" text="Employee" />
+                  <JFXRadioButton fx:id="rdMaleUser" layoutX="163.0" layoutY="175.0" text="Male" />
+                  <JFXRadioButton fx:id="rdFamaleUser" layoutX="271.0" layoutY="175.0" text="Famele" />
+                  <JFXRadioButton fx:id="rdAdminUser" layoutX="162.0" layoutY="221.0" text="Admin" />
+                  <JFXRadioButton fx:id="rdEmployeeUser" layoutX="272.0" layoutY="221.0" text="Employee" />
+                  <JFXTextField layoutX="157.0" layoutY="35.0" prefHeight="25.0" prefWidth="174.0" style="-fx-text-fill: #fff;" />
+                  <JFXTextField layoutX="157.0" layoutY="79.0" prefHeight="25.0" prefWidth="174.0" />
+                  <JFXTextField layoutX="157.0" layoutY="124.0" prefHeight="25.0" prefWidth="174.0" />
                </children>
             </AnchorPane>
          </children>

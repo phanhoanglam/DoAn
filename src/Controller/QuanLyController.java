@@ -6,30 +6,44 @@
 package Controller;
 
 import Model.QuanLyModel;
-import static java.lang.Thread.sleep;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.beans.value.WeakChangeListener;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -39,6 +53,8 @@ import javafx.scene.layout.StackPane;
 public class QuanLyController implements Initializable {
 
     private ObservableList<QuanLyModel> listProduct = FXCollections.observableArrayList();
+
+    private ObservableList<String> listComboboxCategory = FXCollections.observableArrayList();
 
     @FXML
     private TableView<QuanLyModel> tableItems;
@@ -95,8 +111,13 @@ public class QuanLyController implements Initializable {
     private RadioButton rdAdminUser;
     @FXML
     private RadioButton rdEmployeeUser;
-    
+
     private ToggleGroup toggle;
+
+    @FXML
+    private ComboBox<String> cbb_Category;
+
+    public HashMap<String, Integer> hashmapComboboxCategory;
 
     void click_Sales() {
         labelSales.setDisable(true);
@@ -125,6 +146,20 @@ public class QuanLyController implements Initializable {
         UsersStack.setVisible(true);
     }
 
+    @FXML
+    private void click_Logout(MouseEvent event) throws IOException {
+        taskDate.cancel();
+        taskTime.cancel();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/FXML/Login.fxml"));
+        Parent parent = loader.load();
+        Scene scene = new Scene(parent);
+        scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
+        stage.setScene(scene);
+        stage.centerOnScreen();
+    }
+
     void click_btnStartIntime() {
         lblSalesOuttime.setText(null);
         lblSalesIntime.setText(lblDate.getText() + " " + lblTime.getText());
@@ -143,7 +178,7 @@ public class QuanLyController implements Initializable {
                 updateMessage(s.format(d));
                 Thread.sleep(1000);
             }
-        }
+        } 
 
         @Override
         protected void updateMessage(String message) {
@@ -175,7 +210,7 @@ public class QuanLyController implements Initializable {
         rdFamaleUser.setToggleGroup(toggle);
         rdMaleUser.setSelected(true);
     }
-    
+
     public void group_RadioRoleUsers() {
         toggle = new ToggleGroup();
         rdAdminUser.setToggleGroup(toggle);
@@ -183,19 +218,39 @@ public class QuanLyController implements Initializable {
         rdAdminUser.setSelected(true);
     }
 
-    public void addData_TableMenuUser() {
+    public void addValue_ComboboxCategory() throws ClassNotFoundException, SQLException {
+        hashmapComboboxCategory = new HashMap<>();
+        Connection conn = Connect.ConnectDB.connectSQLServer();
+        String sql = "Select category_id, name from Category";
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        while (rs.next()) {
+            hashmapComboboxCategory.put(rs.getString("name"), rs.getInt("category_id"));
+        }
+        for (String key : hashmapComboboxCategory.keySet()) {
+            listComboboxCategory.add(key);
+        }
+        cbb_Category.setItems(listComboboxCategory);
+    }
+
+    @FXML
+    private void click_ComboboxCategory(ActionEvent event) throws ClassNotFoundException, SQLException {
         idcol.setCellValueFactory(new PropertyValueFactory<>("id"));
         namecol.setCellValueFactory(new PropertyValueFactory<>("name"));
         pricecol.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantitycol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 //
-        QuanLyModel model = new QuanLyModel();
-        model.setId(1);
-        model.setName("Pepsi");
-        model.setPrice(12000);
-        model.setQuantity(1);
-//
-        listProduct.add(model);
+        Connection conn = Connect.ConnectDB.connectSQLServer();
+        String sql = "Select storage_item_id, name, price, quantity from Storage Where category_id = ?";
+        PreparedStatement pre = conn.prepareStatement(sql);
+        pre.setInt(1, hashmapComboboxCategory.get(cbb_Category.getValue()));
+        ResultSet rs = pre.executeQuery();
+        int i = 1;
+        listProduct.removeAll(listProduct);
+        while (rs.next()) {
+            QuanLyModel model = new QuanLyModel(i++, rs.getString("name"), rs.getFloat("price"), rs.getInt("quantity"));
+            listProduct.add(model);
+        }
         tableItems.setItems(listProduct);
     }
 
@@ -226,9 +281,14 @@ public class QuanLyController implements Initializable {
             click_btnFinishOuttime();
         });
 
-        addData_TableMenuUser();
         group_RadioGenderUsers();
         group_RadioRoleUsers();
+
+        try {
+            addValue_ComboboxCategory();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(QuanLyController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

@@ -6,7 +6,6 @@
 package View;
 
 import java.io.IOException;
-import java.io.InputStream;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,17 +18,13 @@ import javafx.stage.Stage;
  */
 public class Restaurant extends Application {
 
-    public static InputStream getResource(String fxmlLoginfxml) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/Login.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/Css/Login.css").toExternalForm());
         primaryStage.setScene(scene);
-//        primaryStage.setFullScreen(true);
+//        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setResizable(false);
         primaryStage.show();
     }
